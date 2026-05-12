@@ -8,11 +8,12 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#FDFBF7">
     
-    <title>濟州島行程 🍊</title>
+    <title>濟州島行程🍊</title>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* ✨ 完美還原：現代和風質感配色 */
+        /* 現代和風質感配色 */
         :root {
             --bg-main: #FDFBF7;
             --bg-card: #FFFFFF;
@@ -53,6 +54,7 @@
             padding: env(safe-area-inset-top, 25px) 20px 15px; 
             text-align: center;
         }
+        /* 2. 內頁大標題維持不動 */
         .header h1 { font-size: 18px; margin: 0; font-weight: 700; color: var(--accent); letter-spacing: 1px; line-height: 1.4; }
         
         .day-selector-container { padding: 10px 0 15px 0; }
@@ -96,6 +98,7 @@
         /* 質感卡片設計 */
         .timeline-card { background: var(--bg-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 8px 24px rgba(166, 124, 82, 0.08); border: 1px solid rgba(166, 124, 82, 0.05); position: relative; overflow: hidden; }
         .card-type-tag { position: absolute; top: 0; right: 0; padding: 4px 12px; font-size: 10px; font-weight: 700; border-bottom-left-radius: 12px; text-transform: uppercase; background: #F2F2F2; color: #666; }
+        .type-transport { background: #F2F2F2; color: #666; }
         .type-spot { background: var(--spot-bg); color: #4A7C82; }
         .type-food { background: var(--food-bg); color: #B03A2E; }
 
@@ -118,7 +121,7 @@
             letter-spacing: 1px;
         }
         
-        /* Naver Map 按鈕樣式 */
+        /* Naver Map 按鈕樣式 (修復連動格式) */
         .nav-btn { display: flex; align-items: center; justify-content: center; background: #03C75A; color: white; padding: 14px; border-radius: 15px; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; margin-top: 5px;}
         .nav-btn i { margin-right: 8px; font-size: 18px; }
 
@@ -128,6 +131,14 @@
         .tool-box h3 i { margin-right: 10px; width: 20px; text-align:center;}
         .tool-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #F5F5F5; font-size: 14px; }
         .tool-row:last-child { border-bottom: none; }
+
+        /* 加油小抄樣式 */
+        .fuel-card { display: flex; align-items: center; gap: 15px; padding: 15px; border-radius: 12px; margin-bottom: 10px; background: #FDFBF7; border: 1px solid #EEE; }
+        .fuel-gas { border-left: 8px solid #FFD700; } /* 黃色汽油 */
+        .fuel-diesel { border-left: 8px solid #228B22; } /* 綠色柴油 */
+        .fuel-text { flex: 1; }
+        .fuel-text b { font-size: 18px; color: #2C2C2C; display: block; }
+        .fuel-text span { font-size: 12px; color: #666; }
 
         /* 匯率換算 UI */
         .exchange-box { display:flex; gap:10px; align-items:center; margin-bottom: 5px;}
@@ -190,7 +201,7 @@
 
         <div id="day-1" class="day-content">
             <div class="weather-card">
-                <div class="weather-info"><i class="fas fa-sun"></i><div class="weather-text"><h4>濟州市 (5/30)</h4><p>預估：晴朗</p></div></div>
+                <div class="weather-info"><i class="fas fa-sun"></i><div class="weather-text"><h4>濟州市 (5/30)</h4><p>預估：晴朗度假天</p></div></div>
                 <div class="weather-temp"><span class="high">24°</span> / <span class="low">17°</span></div>
                 <a href="https://m.search.naver.com/search.naver?query=제주날씨" target="_blank" class="weather-btn">即時預報</a>
             </div>
@@ -387,7 +398,7 @@
 
         <div id="day-4" class="day-content" style="display:none;">
             <div class="weather-card">
-                <div class="weather-info"><i class="fas fa-sun"></i><div class="weather-text"><h4>涯月 (6/2)</h4><p>預估：晴朗</p></div></div>
+                <div class="weather-info"><i class="fas fa-sun"></i><div class="weather-text"><h4>涯月 (6/2)</h4><p>預估：晴朗度假天</p></div></div>
                 <div class="weather-temp"><span class="high">25°</span> / <span class="low">17°</span></div>
                 <a href="https://m.search.naver.com/search.naver?query=애월날씨" target="_blank" class="weather-btn">即時預報</a>
             </div>
@@ -465,6 +476,7 @@
                 <div class="card-type-tag">重要</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 下午</div>
                 <h3 class="card-title">回飯店前加油</h3>
+                <div class="kr-name">🚗 記得先加滿油！</div>
             </div>
         </div>
 
@@ -479,7 +491,7 @@
             
             <div class="timeline-card">
                 <div class="card-type-tag">賦歸</div>
-                <div class="time-badge"><i class="far fa-clock"></i> 10:40</div>
+                <div class="time-badge"><i class="far fa-clock"></i> 10:40 起飛</div>
                 <h3 class="card-title">起飛回台灣</h3>
             </div>
         </div>
@@ -489,7 +501,7 @@
         <h2 style="font-size: 18px; color: var(--accent); margin-bottom: 20px;">韓國必備導航地圖</h2>
         <a href="https://map.naver.com/" target="_blank" class="map-card">
             <div class="map-icon naver">N</div>
-            <div class="map-card-text"><h4>Naver Map</h4><p>韓國自駕必備，支援中文搜尋</p></div>
+            <div class="map-card-text"><h4>Naver Map</h4><p>韓國自駕首選，支援中文</p></div>
         </a>
         <a href="https://map.kakao.com/" target="_blank" class="map-card">
             <div class="map-icon kakao"><i class="fas fa-comment"></i></div>
@@ -498,24 +510,31 @@
     </div>
 
     <div id="page-tools" class="content-section">
+        
         <div class="tool-box">
             <h3><i class="fas fa-calculator"></i> 韓元雙向換算機</h3>
             <div class="exchange-box">
-                <input type="number" id="amt-input" placeholder="金額" oninput="calcExchange()">
+                <input type="number" id="amt-input" placeholder="輸入金額" oninput="calcExchange()">
                 <i class="fas fa-exchange-alt swap-btn" onclick="swapCurrency()"></i>
                 <div class="exchange-result"><span id="target-symbol">NT$</span><span id="result-output">0</span></div>
             </div>
-            <p id="source-label" style="font-size:11px; color:var(--text-sub); margin-top:0px;">輸入：韓元 (KRW) / 換算：台幣 (TWD)</p>
-            <div style="text-align:right; font-size:11px; margin-top:8px;">匯率: <input type="number" id="rate-input" value="0.024" step="0.0001" oninput="calcExchange()" style="width:60px; border:none; border-bottom:1px dashed #ccc; text-align:center;"></div>
+            <div style="font-size:12px; color:var(--text-sub); margin-top:-2px; margin-bottom:10px; display:flex; justify-content:space-between;">
+                <span id="source-label">輸入：韓元 (KRW)</span>
+                <span id="target-label">換算：台幣 (TWD)</span>
+            </div>
+            <div style="text-align:right; font-size:11px; color:var(--text-sub); margin-top:8px;">
+                目前匯率 <span id="rate-status" style="color:var(--primary); font-weight:bold;">(載入中...)</span>: 
+                <input type="number" id="rate-input" value="0.024" step="0.0001" oninput="calcExchange()" style="width:60px; border:none; border-bottom:1px dashed #ccc; text-align:center; color:var(--primary); font-weight:bold; outline:none; background:transparent;">
+            </div>
         </div>
 
         <div class="tool-box">
             <h3><i class="fas fa-language"></i> 指尖韓語字卡</h3>
             <div class="flashcard-grid">
                 <button class="flashcard-btn" onclick="showCard('이거 얼마예요?', '請問這個多少錢？')"><i class="fas fa-tag"></i>多少錢</button>
-                <button class="flashcard-btn" onclick="showCard('화장실이 어디예요?', '請問廁所在哪裡？')"><i class="fas fa-restroom"></i>廁所</button>
-                <button class="flashcard-btn" onclick="showCard('계산해 주세요', '麻煩結帳')"><i class="fas fa-receipt"></i>結帳</button>
-                <button class="flashcard-btn" onclick="showCard('대만 사람이에요.', '我是台灣人')"><i class="fas fa-flag"></i>我是台灣人</button>
+                <button class="flashcard-btn" onclick="showCard('화장실이 어디예요?', '請問廁所在哪裡？')"><i class="fas fa-restroom"></i>找洗手間</button>
+                <button class="flashcard-btn" onclick="showCard('계산해 주세요', '麻煩結帳')"><i class="fas fa-receipt"></i>餐廳結帳</button>
+                <button class="flashcard-btn" onclick="showCard('한국어를 못해요. 대만 사람이에요.', '我不會韓文，我是台灣人')"><i class="fas fa-flag"></i>我是台灣人</button>
             </div>
         </div>
 
@@ -525,9 +544,9 @@
             <div class="checklist-category">
                 <h4>📄 重要文件與憑證</h4>
                 <label class="check-item"><input type="checkbox" id="chk-passport"><span>護照 (效期需 6 個月以上)</span></label>
-                <label class="check-item"><input type="checkbox" id="chk-drive"><span>國際駕照、台灣駕照正本、租車憑證</span></label>
-                <label class="check-item"><input type="checkbox" id="chk-keta"><span>K-ETA 或 入境卡/海關申報單</span></label>
-                <label class="check-item"><input type="checkbox" id="chk-money"><span>韓元現金 / 信用卡(帶實體卡)</span></label>
+                <label class="check-item"><input type="checkbox" id="chk-drive"><span>國際駕照、台灣駕照、租車憑證</span></label>
+                <label class="check-item"><input type="checkbox" id="chk-keta"><span>電子入境卡</span></label>
+                <label class="check-item"><input type="checkbox" id="chk-money"><span>韓元現金 / 信用卡</span></label>
             </div>
 
             <div class="checklist-category">
@@ -541,19 +560,41 @@
                 <h4>👕 衣物與日常用品</h4>
                 <label class="check-item"><input type="checkbox" id="chk-clothes"><span>換洗衣物 (6天份)</span></label>
                 <label class="check-item"><input type="checkbox" id="chk-shoes"><span>盥洗用具 / 浴巾 / 拖鞋</span></label>
-                <label class="check-item"><input type="checkbox" id="chk-meds"><span>個人常備藥物 (腸胃、感冒、暈船藥)</span></label>
+                <label class="check-item"><input type="checkbox" id="chk-meds"><span>個人常備藥物 (腸胃、感冒、暈車藥)</span></label>
                 <label class="check-item"><input type="checkbox" id="chk-sun"><span>太陽眼鏡 / 防曬用品 / 傘</span></label>
             </div>
         </div>
 
         <div class="tool-box">
+            <h3><i class="fas fa-gas-pump"></i> 自駕加油小抄</h3>
+            <div class="fuel-card fuel-gas">
+                <div class="fuel-text">
+                    <b>휘발유 (汽油 / Gasoline)</b>
+                    <span>通常油槍顏色：<span style="color:#D4AF37; font-weight:bold;">黃色</span></span>
+                </div>
+            </div>
+            <div class="fuel-card fuel-diesel">
+                <div class="fuel-text">
+                    <b>경유 (柴油 / Diesel)</b>
+                    <span>通常油槍顏色：<span style="color:#228B22; font-weight:bold;">綠色</span> 或 黑色</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tool-box">
             <h3><i class="fas fa-info-circle"></i> 航班 ＆ 住宿</h3>
-            <div class="tool-row"><span>去程航班</span><b>5/30 - 09:35 抵達</b></div>
-            <div class="tool-row"><span>回程航班</span><b>6/04 - 10:40 起飛</b></div>
+            <div class="tool-row"><span>航班資訊</span><b>5/30-09:35抵達 / 6/4-10:40起飛</b></div>
             <div class="tool-row"><span>飯店名稱</span><b>Velum Resort</b></div>
             <div class="tool-row" style="flex-direction:column; gap:5px;">
                 <span>飯店地址 (韓文)</span><b style="font-size:13px; word-break:break-all;">제주 서귀포시 516로 277번길 45</b>
             </div>
+            <div class="tool-row"><span>電話</span><b>+82 64-733-0088</b></div>
+        </div>
+
+        <div class="tool-box">
+            <h3><i class="fas fa-phone-alt"></i> 緊急聯絡</h3>
+            <div class="tool-row"><span>報警 / 急救</span><b>112 / 119</b></div>
+            <div class="tool-row"><span>韓國旅遊諮詢(中文)</span><b>1330</b></div>
         </div>
     </div>
 
@@ -583,7 +624,7 @@
 
         function switchPage(pageId, element) {
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            element.classList.add('active');
+            if(element) element.classList.add('active');
             document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
             document.getElementById('page-' + pageId).classList.add('active');
             document.getElementById('day-tabs-container').style.display = (pageId === 'itinerary') ? 'block' : 'none';
@@ -595,18 +636,38 @@
             try {
                 const response = await fetch('https://open.er-api.com/v6/latest/KRW');
                 const data = await response.json();
-                if(data && data.rates.TWD) {
-                    document.getElementById('rate-input').value = data.rates.TWD.toFixed(5);
+                if(data && data.rates && data.rates.TWD) {
+                    const rate = data.rates.TWD;
+                    document.getElementById('rate-input').value = rate.toFixed(5);
+                    document.getElementById('rate-status').innerText = "(自動更新)";
                     calcExchange();
                 }
-            } catch (e) { console.log("Rate Offline"); }
+            } catch (e) { 
+                console.log("Rate API Offline"); 
+                document.getElementById('rate-status').innerText = "(離線/手動)";
+                document.getElementById('rate-status').style.color = "#A0A0A0";
+            }
         }
 
         function swapCurrency() {
             isKrwToTwd = !isKrwToTwd;
-            document.getElementById('target-symbol').innerText = isKrwToTwd ? "NT$" : "₩";
-            document.getElementById('source-label').innerText = isKrwToTwd ? "輸入：韓元 (KRW) / 換算：台幣 (TWD)" : "輸入：台幣 (TWD) / 換算：韓元 (KRW)";
-            document.getElementById('amt-input').value = '';
+            const inputField = document.getElementById('amt-input');
+            const targetSymbol = document.getElementById('target-symbol');
+            const sourceLabel = document.getElementById('source-label');
+            const targetLabel = document.getElementById('target-label');
+
+            if (isKrwToTwd) {
+                inputField.placeholder = "輸入金額 ₩ (韓元)";
+                targetSymbol.innerText = "NT$";
+                sourceLabel.innerText = "輸入：韓元 (KRW)";
+                targetLabel.innerText = "換算：台幣 (TWD)";
+            } else {
+                inputField.placeholder = "輸入金額 $ (台幣)";
+                targetSymbol.innerText = "₩";
+                sourceLabel.innerText = "輸入：台幣 (TWD)";
+                targetLabel.innerText = "換算：韓元 (KRW)";
+            }
+            inputField.value = '';
             calcExchange();
         }
 
@@ -630,8 +691,8 @@
             fetchExchangeRate();
             const checkboxes = document.querySelectorAll('.check-item input[type="checkbox"]');
             checkboxes.forEach(box => {
-                box.checked = localStorage.getItem('jeju_final_' + box.id) === 'true';
-                box.addEventListener('change', function() { localStorage.setItem('jeju_final_' + this.id, this.checked); });
+                box.checked = localStorage.getItem('jeju_ultimate_' + box.id) === 'true';
+                box.addEventListener('change', function() { localStorage.setItem('jeju_ultimate_' + this.id, this.checked); });
             });
         });
     </script>
