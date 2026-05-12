@@ -54,7 +54,6 @@
             padding: env(safe-area-inset-top, 25px) 20px 15px; 
             text-align: center;
         }
-        /* 2. 內頁大標題維持不動 */
         .header h1 { font-size: 18px; margin: 0; font-weight: 700; color: var(--accent); letter-spacing: 1px; line-height: 1.4; }
         
         .day-selector-container { padding: 10px 0 15px 0; }
@@ -106,7 +105,7 @@
         .time-badge i { margin-right: 6px; }
         .card-title { font-size: 19px; font-weight: 700; margin: 0 0 12px 0; color: var(--text-main); }
         
-        /* 🇰🇷 放大版韓文店名設計 */
+        /* 🇰🇷 放大版韓文店名設計 (移除小提示後，韓文置中放大) */
         .kr-name { 
             background: #F4F7F5; 
             color: var(--primary); 
@@ -121,7 +120,7 @@
             letter-spacing: 1px;
         }
         
-        /* Naver Map 按鈕樣式 (修復連動格式) */
+        /* Naver Map 按鈕樣式 */
         .nav-btn { display: flex; align-items: center; justify-content: center; background: #03C75A; color: white; padding: 14px; border-radius: 15px; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; margin-top: 5px;}
         .nav-btn i { margin-right: 8px; font-size: 18px; }
 
@@ -134,9 +133,8 @@
 
         /* 加油小抄樣式 */
         .fuel-card { display: flex; align-items: center; gap: 15px; padding: 15px; border-radius: 12px; margin-bottom: 10px; background: #FDFBF7; border: 1px solid #EEE; }
-        .fuel-gas { border-left: 8px solid #FFD700; } /* 黃色汽油 */
-        .fuel-diesel { border-left: 8px solid #228B22; } /* 綠色柴油 */
-        .fuel-text { flex: 1; }
+        .fuel-gas { border-left: 8px solid #FFD700; } 
+        .fuel-diesel { border-left: 8px solid #228B22; } 
         .fuel-text b { font-size: 18px; color: #2C2C2C; display: block; }
         .fuel-text span { font-size: 12px; color: #666; }
 
@@ -147,7 +145,7 @@
         .swap-btn { cursor: pointer; color: #A0A0A0; font-size: 16px; transition: transform 0.2s; padding: 5px; border-radius: 50%; }
         .swap-btn:active { transform: scale(0.9); }
 
-        /* 韓語字卡 UI */
+        /* 日語字卡 UI */
         .flashcard-grid { display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
         .flashcard-btn { background: #FFFFFF; border: 1px solid #EAE2D6; padding: 12px 5px; border-radius: 12px; font-size: 14px; font-weight: 500; color: var(--text-main); cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); display:flex; flex-direction:column; align-items:center; gap:5px;}
         .flashcard-btn i { font-size: 20px; color: var(--accent); }
@@ -164,6 +162,16 @@
         .check-item span { transition: all 0.2s ease; color: var(--text-main); }
         .check-item input[type="checkbox"]:checked + span { color: #A0A0A0; text-decoration: line-through; }
 
+        /* 待去清單專用樣式 */
+        .input-group { display:flex; gap:10px; align-items:center; margin-bottom: 15px;}
+        .input-group input { flex:1; min-width: 0; padding:12px; border-radius:10px; border:1px solid #EAE2D6; font-size:16px; outline:none; box-sizing:border-box;}
+        .add-btn { background: var(--primary); color: white; border: none; padding: 12px 20px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 15px;}
+        .wish-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #F5F5F5; }
+        .wish-content { display: flex; align-items: center; gap: 10px; flex: 1; font-size: 16px; cursor: pointer; color: var(--text-main); }
+        .wish-content.checked { text-decoration: line-through; color: #A0A0A0; }
+        .wish-content i { color: var(--primary); font-size: 18px; width: 20px; }
+        .delete-wish { color: #E09090; padding: 5px 10px; cursor: pointer; font-size: 18px;}
+
         /* 地圖卡片 */
         .map-card { display: flex; align-items: center; padding: 15px; border-radius: 16px; background: #FDFBF7; border: 1px solid #EAE2D6; margin-bottom: 15px; text-decoration: none; color: var(--text-main); transition: 0.3s; }
         .map-icon { width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: white; margin-right: 15px; flex-shrink: 0;}
@@ -172,9 +180,9 @@
         .map-card-text h4 { margin: 0 0 5px 0; font-size: 15px; }
         .map-card-text p { margin: 0; font-size: 12px; color: var(--text-sub); }
 
-        /* 底部導航 */
+        /* 底部導航 (更新為 4 個按鈕) */
         .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--glass); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); display: flex; justify-content: space-between; padding: 15px 0 env(safe-area-inset-bottom, 30px); box-shadow: 0 -5px 20px rgba(0,0,0,0.05); z-index: 1000; }
-        .nav-item { text-align: center; color: #A0A0A0; font-size: 11px; font-weight: 500; width: 33.33%; cursor: pointer; padding-top: 5px;}
+        .nav-item { text-align: center; color: #A0A0A0; font-size: 11px; font-weight: 500; width: 25%; cursor: pointer; padding-top: 5px;}
         .nav-item i { font-size: 22px; margin-bottom: 5px; display: block; }
         .nav-item.active { color: var(--primary); }
     </style>
@@ -271,6 +279,7 @@
             </div>
             
             <div class="timeline-card">
+                <div class="card-type-tag type-transport">交通</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 10:00 - 11:00</div>
                 <h3 class="card-title">出發</h3>
             </div>
@@ -398,7 +407,7 @@
 
         <div id="day-4" class="day-content" style="display:none;">
             <div class="weather-card">
-                <div class="weather-info"><i class="fas fa-sun"></i><div class="weather-text"><h4>涯月 (6/2)</h4><p>預估：晴朗度假天</p></div></div>
+                <div class="weather-info"><i class="fas fa-sun"></i><div class="weather-text"><h4>涯月 (6/2)</h4><p>預估：晴朗</p></div></div>
                 <div class="weather-temp"><span class="high">25°</span> / <span class="low">17°</span></div>
                 <a href="https://m.search.naver.com/search.naver?query=애월날씨" target="_blank" class="weather-btn">即時預報</a>
             </div>
@@ -476,7 +485,6 @@
                 <div class="card-type-tag">重要</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 下午</div>
                 <h3 class="card-title">回飯店前加油</h3>
-                <div class="kr-name">🚗 記得先加滿油！</div>
             </div>
         </div>
 
@@ -491,7 +499,7 @@
             
             <div class="timeline-card">
                 <div class="card-type-tag">賦歸</div>
-                <div class="time-badge"><i class="far fa-clock"></i> 10:40 起飛</div>
+                <div class="time-badge"><i class="far fa-clock"></i> 10:40</div>
                 <h3 class="card-title">起飛回台灣</h3>
             </div>
         </div>
@@ -501,12 +509,24 @@
         <h2 style="font-size: 18px; color: var(--accent); margin-bottom: 20px;">韓國必備導航地圖</h2>
         <a href="https://map.naver.com/" target="_blank" class="map-card">
             <div class="map-icon naver">N</div>
-            <div class="map-card-text"><h4>Naver Map</h4><p>韓國自駕首選，支援中文</p></div>
+            <div class="map-card-text"><h4>Naver Map</h4><p>韓國自駕首選，支援中文搜尋</p></div>
         </a>
         <a href="https://map.kakao.com/" target="_blank" class="map-card">
             <div class="map-icon kakao"><i class="fas fa-comment"></i></div>
             <div class="map-card-text"><h4>KakaoMap</h4><p>備用導航，街景更新快</p></div>
         </a>
+    </div>
+
+    <div id="page-wishlist" class="content-section">
+        <div class="tool-box">
+            <h3><i class="fas fa-heart"></i> 臨時想去的景點/店</h3>
+            <div class="input-group">
+                <input type="text" id="wish-input" placeholder="輸入店名或景點...">
+                <button class="add-btn" onclick="addWish()">新增</button>
+            </div>
+            <div id="wishlist-container">
+                </div>
+        </div>
     </div>
 
     <div id="page-tools" class="content-section">
@@ -544,9 +564,10 @@
             <div class="checklist-category">
                 <h4>📄 重要文件與憑證</h4>
                 <label class="check-item"><input type="checkbox" id="chk-passport"><span>護照 (效期需 6 個月以上)</span></label>
-                <label class="check-item"><input type="checkbox" id="chk-drive"><span>國際駕照、台灣駕照、租車憑證</span></label>
-                <label class="check-item"><input type="checkbox" id="chk-keta"><span>電子入境卡</span></label>
-                <label class="check-item"><input type="checkbox" id="chk-money"><span>韓元現金 / 信用卡</span></label>
+                <label class="check-item"><input type="checkbox" id="chk-drive"><span>國際駕照、台灣駕照正本、租車憑證</span></label>
+                <label class="check-item"><input type="checkbox" id="chk-keta"><span>K-ETA 或 入境卡/海關申報單</span></label>
+                <label class="check-item"><input type="checkbox" id="chk-money"><span>韓元現金 / 信用卡(帶實體卡)</span></label>
+                <label class="check-item"><input type="checkbox" id="chk-wowpass"><span>T-money 或 WOWPASS 實體卡</span></label>
             </div>
 
             <div class="checklist-category">
@@ -560,7 +581,7 @@
                 <h4>👕 衣物與日常用品</h4>
                 <label class="check-item"><input type="checkbox" id="chk-clothes"><span>換洗衣物 (6天份)</span></label>
                 <label class="check-item"><input type="checkbox" id="chk-shoes"><span>盥洗用具 / 浴巾 / 拖鞋</span></label>
-                <label class="check-item"><input type="checkbox" id="chk-meds"><span>個人常備藥物 (腸胃、感冒、暈車藥)</span></label>
+                <label class="check-item"><input type="checkbox" id="chk-meds"><span>個人常備藥物 (腸胃、感冒、暈船藥)</span></label>
                 <label class="check-item"><input type="checkbox" id="chk-sun"><span>太陽眼鏡 / 防曬用品 / 傘</span></label>
             </div>
         </div>
@@ -601,6 +622,7 @@
     <div class="bottom-nav">
         <div class="nav-item active" onclick="switchPage('itinerary', this)"><i class="fas fa-calendar-alt"></i><span>行程導覽</span></div>
         <div class="nav-item" onclick="switchPage('maps', this)"><i class="fas fa-map-signs"></i><span>導航地圖</span></div>
+        <div class="nav-item" onclick="switchPage('wishlist', this)"><i class="fas fa-heart"></i><span>待去清單</span></div>
         <div class="nav-item" onclick="switchPage('tools', this)"><i class="fas fa-suitcase"></i><span>旅行工具</span></div>
     </div>
 
@@ -612,6 +634,7 @@
     </div>
 
     <script>
+        /* 切換天數 */
         function switchDay(dayNum) {
             const tabs = document.querySelectorAll('.day-tab');
             tabs.forEach(t => t.classList.remove('active'));
@@ -622,15 +645,17 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        /* 切換底部選單 */
         function switchPage(pageId, element) {
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            if(element) element.classList.add('active');
+            element.classList.add('active');
             document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
             document.getElementById('page-' + pageId).classList.add('active');
             document.getElementById('day-tabs-container').style.display = (pageId === 'itinerary') ? 'block' : 'none';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        /* 匯率邏輯 */
         let isKrwToTwd = true;
         async function fetchExchangeRate() {
             try {
@@ -680,6 +705,7 @@
             } else { output.innerText = '0'; }
         }
 
+        /* 字卡邏輯 */
         function showCard(kr, tw) {
             document.getElementById('card-jp').innerText = kr;
             document.getElementById('card-tw').innerText = tw;
@@ -687,12 +713,53 @@
         }
         function closeCard() { document.getElementById('flashcard-modal').style.display = 'none'; }
 
+        /* 待去清單邏輯 */
+        let wishes = JSON.parse(localStorage.getItem('jeju_wishes') || '[]');
+        function renderWishes() {
+            const container = document.getElementById('wishlist-container');
+            container.innerHTML = '';
+            wishes.forEach((wish, index) => {
+                const div = document.createElement('div');
+                div.className = 'wish-item';
+                div.innerHTML = `
+                    <div class="wish-content ${wish.done ? 'checked' : ''}" onclick="toggleWish(${index})">
+                        <i class="${wish.done ? 'fas fa-check-circle' : 'far fa-circle'}"></i>
+                        <span>${wish.text}</span>
+                    </div>
+                    <div class="delete-wish" onclick="deleteWish(${index})"><i class="fas fa-trash-alt"></i></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+        function addWish() {
+            const input = document.getElementById('wish-input');
+            if(!input.value.trim()) return;
+            wishes.push({ text: input.value.trim(), done: false });
+            input.value = '';
+            saveAndRenderWishes();
+        }
+        function toggleWish(index) {
+            wishes[index].done = !wishes[index].done;
+            saveAndRenderWishes();
+        }
+        function deleteWish(index) {
+            wishes.splice(index, 1);
+            saveAndRenderWishes();
+        }
+        function saveAndRenderWishes() {
+            localStorage.setItem('jeju_wishes', JSON.stringify(wishes));
+            renderWishes();
+        }
+
+        /* 初始化 */
         document.addEventListener('DOMContentLoaded', function() {
             fetchExchangeRate();
+            renderWishes();
+            
             const checkboxes = document.querySelectorAll('.check-item input[type="checkbox"]');
             checkboxes.forEach(box => {
-                box.checked = localStorage.getItem('jeju_ultimate_' + box.id) === 'true';
-                box.addEventListener('change', function() { localStorage.setItem('jeju_ultimate_' + this.id, this.checked); });
+                box.checked = localStorage.getItem('jeju_perfect_' + box.id) === 'true';
+                box.addEventListener('change', function() { localStorage.setItem('jeju_perfect_' + this.id, this.checked); });
             });
         });
     </script>
