@@ -13,7 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* ✨ 完美還原：現代和風質感配色 */
+        /* 現代和風質感配色 */
         :root {
             --bg-main: #FDFBF7;
             --bg-card: #FFFFFF;
@@ -54,6 +54,7 @@
             padding: env(safe-area-inset-top, 25px) 20px 15px; 
             text-align: center;
         }
+        /* 內頁大標題維持不動 */
         .header h1 { font-size: 18px; margin: 0; font-weight: 700; color: var(--accent); letter-spacing: 1px; line-height: 1.4; }
         
         .day-selector-container { padding: 10px 0 15px 0; }
@@ -94,9 +95,9 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.02); white-space: nowrap;
         }
 
-        /* 質感卡片設計與標籤還原 */
+        /* 質感卡片設計 */
         .timeline-card { background: var(--bg-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 8px 24px rgba(166, 124, 82, 0.08); border: 1px solid rgba(166, 124, 82, 0.05); position: relative; overflow: hidden; }
-        .card-type-tag { position: absolute; top: 0; right: 0; padding: 4px 12px; font-size: 10px; font-weight: 700; border-bottom-left-radius: 12px; text-transform: uppercase; }
+        .card-type-tag { position: absolute; top: 0; right: 0; padding: 4px 12px; font-size: 10px; font-weight: 700; border-bottom-left-radius: 12px; text-transform: uppercase; background: #F2F2F2; color: #666; }
         .type-transport { background: #F2F2F2; color: #666; }
         .type-spot { background: var(--spot-bg); color: #4A7C82; }
         .type-food { background: var(--food-bg); color: #B03A2E; }
@@ -105,14 +106,22 @@
         .time-badge i { margin-right: 6px; }
         .card-title { font-size: 19px; font-weight: 700; margin: 0 0 12px 0; color: var(--text-main); }
         
-        /* 🇰🇷 放大版韓文店名設計 (拿掉中文提示後的核心) */
+        /* 🇰🇷 放大版韓文店名設計 */
         .kr-name { 
-            background: #F4F7F5; color: var(--primary); padding: 12px; border-radius: 12px; 
-            font-weight: 700; font-size: 18px; margin-bottom: 15px; display: block; text-align: center;
-            border: 1px dashed rgba(132, 150, 105, 0.4); letter-spacing: 1px;
+            background: #F4F7F5; 
+            color: var(--primary); 
+            padding: 12px; 
+            border-radius: 12px; 
+            font-weight: 700; 
+            font-size: 18px; 
+            margin-bottom: 15px; 
+            display: block; 
+            text-align: center;
+            border: 1px dashed rgba(132, 150, 105, 0.4);
+            letter-spacing: 1px;
         }
         
-        /* Naver Map 按鈕樣式 */
+        /* Naver Map 按鈕樣式 (修復連動格式) */
         .nav-btn { display: flex; align-items: center; justify-content: center; background: #03C75A; color: white; padding: 14px; border-radius: 15px; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; margin-top: 5px;}
         .nav-btn i { margin-right: 8px; font-size: 18px; }
 
@@ -125,8 +134,9 @@
 
         /* 加油小抄樣式 */
         .fuel-card { display: flex; align-items: center; gap: 15px; padding: 15px; border-radius: 12px; margin-bottom: 10px; background: #FDFBF7; border: 1px solid #EEE; }
-        .fuel-gas { border-left: 8px solid #FFD700; }
-        .fuel-diesel { border-left: 8px solid #228B22; }
+        .fuel-gas { border-left: 8px solid #FFD700; } /* 黃色汽油 */
+        .fuel-diesel { border-left: 8px solid #228B22; } /* 綠色柴油 */
+        .fuel-text { flex: 1; }
         .fuel-text b { font-size: 18px; color: #2C2C2C; display: block; }
         .fuel-text span { font-size: 12px; color: #666; }
 
@@ -137,7 +147,7 @@
         .swap-btn { cursor: pointer; color: #A0A0A0; font-size: 16px; transition: transform 0.2s; padding: 5px; border-radius: 50%; }
         .swap-btn:active { transform: scale(0.9); }
 
-        /* 待去清單專用樣式 (完整還原版) */
+        /* 待去清單專用樣式 */
         .input-group { display:flex; gap:10px; align-items:center; margin-bottom: 15px;}
         .input-group input { flex:1; min-width: 0; padding:12px; border-radius:10px; border:1px solid #EAE2D6; font-size:16px; outline:none; box-sizing:border-box;}
         .add-btn { background: var(--primary); color: white; border: none; padding: 12px 20px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 15px;}
@@ -147,7 +157,7 @@
         .wish-content i { color: var(--primary); font-size: 18px; width: 20px; }
         .delete-wish { color: #E09090; padding: 5px 10px; cursor: pointer; font-size: 18px;}
 
-        /* 日語字卡 UI */
+        /* 韓語字卡 UI */
         .flashcard-grid { display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
         .flashcard-btn { background: #FFFFFF; border: 1px solid #EAE2D6; padding: 12px 5px; border-radius: 12px; font-size: 14px; font-weight: 500; color: var(--text-main); cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); display:flex; flex-direction:column; align-items:center; gap:5px;}
         .flashcard-btn i { font-size: 20px; color: var(--accent); }
@@ -172,7 +182,7 @@
         .map-card-text h4 { margin: 0 0 5px 0; font-size: 15px; }
         .map-card-text p { margin: 0; font-size: 12px; color: var(--text-sub); }
 
-        /* 底部導航 (還原成四個均分按鈕，並補回完整文字) */
+        /* 底部導航 */
         .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--glass); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); display: flex; justify-content: space-between; padding: 15px 0 env(safe-area-inset-bottom, 30px); box-shadow: 0 -5px 20px rgba(0,0,0,0.05); z-index: 1000; }
         .nav-item { text-align: center; color: #A0A0A0; font-size: 11px; font-weight: 500; width: 25%; cursor: pointer; padding-top: 5px;}
         .nav-item i { font-size: 22px; margin-bottom: 5px; display: block; }
@@ -211,7 +221,7 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 09:35 - 11:00</div>
                 <h3 class="card-title">抵達濟州機場</h3>
                 <div class="kr-name">제주국제공항</div>
-                <a href="https://map.naver.com/p/search/제주국제공항" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至機場</a>
+                <a href="https://map.naver.com/p/search/제주국제공항" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -219,7 +229,7 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 11:00 - 12:00</div>
                 <h3 class="card-title">樂天租車取車</h3>
                 <div class="kr-name">롯데렌터카 제주 오토하우스</div>
-                <a href="https://map.naver.com/p/search/롯데렌터카 제주 오토하우스" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至租車處</a>
+                <a href="https://map.naver.com/p/search/롯데렌터카 제주 오토하우스" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -227,7 +237,7 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 12:00 - 14:00</div>
                 <h3 class="card-title">東門市場</h3>
                 <div class="kr-name">제주동문시장</div>
-                <a href="https://map.naver.com/p/search/제주동문시장" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至東門市場</a>
+                <a href="https://map.naver.com/p/search/제주동문시장" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -235,15 +245,15 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 14:00 - 16:00</div>
                 <h3 class="card-title">七星街逛街</h3>
                 <div class="kr-name">칠성로</div>
-                <a href="https://map.naver.com/p/search/칠성로" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至七星街</a>
+                <a href="https://map.naver.com/p/search/칠성로" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
                 <div class="card-type-tag type-transport">住宿</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 17:00 - 18:30</div>
-                <h3 class="card-title">Velum Resort 入住</h3>
+                <h3 class="card-title">Velum Resort入住</h3>
                 <div class="kr-name">벨룸리조트</div>
-                <a href="https://map.naver.com/p/search/벨룸리조트" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至飯店</a>
+                <a href="https://map.naver.com/p/search/벨룸리조트" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -251,15 +261,15 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 18:30 - 20:30</div>
                 <h3 class="card-title">星豚星 中文橘田本店</h3>
                 <div class="kr-name">별돈별 중문귤밭본점</div>
-                <a href="https://map.naver.com/p/search/별돈별 중문귤밭본점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至餐廳</a>
+                <a href="https://map.naver.com/p/search/별돈별 중문귤밭본점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
                 <div class="card-type-tag type-spot">超市</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 20:30</div>
-                <h3 class="card-title">emart 採購</h3>
+                <h3 class="card-title">emart採購</h3>
                 <div class="kr-name">이마트 서귀포점</div>
-                <a href="https://map.naver.com/p/search/이마트 서귀포점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至超市</a>
+                <a href="https://map.naver.com/p/search/이마트 서귀포점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
         </div>
 
@@ -273,15 +283,15 @@
             <div class="timeline-card">
                 <div class="card-type-tag type-transport">交通</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 10:00 - 11:00</div>
-                <h3 class="card-title">自駕出發</h3>
+                <h3 class="card-title">出發</h3>
             </div>
             
             <div class="timeline-card">
                 <div class="card-type-tag type-food">必吃</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 11:00 - 12:30</div>
-                <h3 class="card-title">倫敦貝果 濟州店</h3>
+                <h3 class="card-title">倫敦貝果+附近逛逛</h3>
                 <div class="kr-name">런던베이글뮤지엄 제주점</div>
-                <a href="https://map.naver.com/p/search/런던베이글뮤지엄 제주점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至倫敦貝果</a>
+                <a href="https://map.naver.com/p/search/런던베이글뮤지엄 제주점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -289,7 +299,7 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 12:30 - 13:30</div>
                 <h3 class="card-title">olive young</h3>
                 <div class="kr-name">올리브영 제주함덕점</div>
-                <a href="https://map.naver.com/p/search/올리브영 제주함덕점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至olive young</a>
+                <a href="https://map.naver.com/p/search/올리브영 제주함덕점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -297,7 +307,7 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 13:30 - 15:30</div>
                 <h3 class="card-title">Cafe Del Moondo</h3>
                 <div class="kr-name">델문도</div>
-                <a href="https://map.naver.com/p/search/델문도" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至咖啡廳</a>
+                <a href="https://map.naver.com/p/search/델문도" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -305,7 +315,7 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 15:30 - 16:30</div>
                 <h3 class="card-title">咸德海灘</h3>
                 <div class="kr-name">함덕해수욕장</div>
-                <a href="https://map.naver.com/p/search/함덕해수욕장" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至咸德海灘</a>
+                <a href="https://map.naver.com/p/search/함덕해수욕장" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -313,7 +323,7 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 17:00 - 19:00</div>
                 <h3 class="card-title">季節餐桌</h3>
                 <div class="kr-name">계절식탁함덕점</div>
-                <a href="https://map.naver.com/p/search/계절식탁함덕점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至餐廳</a>
+                <a href="https://map.naver.com/p/search/계절식탁함덕점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
         </div>
 
@@ -325,17 +335,17 @@
             </div>
             
             <div class="timeline-card">
-                <div class="card-type-tag type-transport">碼頭</div>
+                <div class="card-type-tag type-transport">交通</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 08:30 - 09:30</div>
-                <h3 class="card-title">出發至城山浦港</h3>
+                <h3 class="card-title">出發至城山浦港綜合客運碼頭</h3>
                 <div class="kr-name">성산포항종합여객터미널</div>
-                <a href="https://map.naver.com/p/search/성산포항종합여객터미널" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至碼頭</a>
+                <a href="https://map.naver.com/p/search/성산포항종합여객터미널" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
-                <div class="card-type-tag type-transport">島上交通</div>
+                <div class="card-type-tag type-transport">交通</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 10:30 - 11:00</div>
-                <h3 class="card-title">牛島租車 (天津港)</h3>
+                <h3 class="card-title">牛島租車(天津港)</h3>
                 <div class="kr-name">더블유전기차 (暫定)</div>
             </div>
             
@@ -344,27 +354,27 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 11:00 - 12:00</div>
                 <h3 class="card-title">西濱白沙灘</h3>
                 <div class="kr-name">서빈백사해수욕장캠핑장</div>
-                <a href="https://map.naver.com/p/search/서빈백사해수욕장" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至沙灘</a>
+                <a href="https://map.naver.com/p/search/서빈백사해수욕장캠핑장" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
                 <div class="card-type-tag type-food">午餐</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 12:10 - 13:30</div>
-                <h3 class="card-title">午餐時間</h3>
+                <h3 class="card-title">午餐</h3>
             </div>
             
             <div class="timeline-card">
-                <div class="card-type-tag type-food">必吃</div>
+                <div class="card-type-tag type-food">點心</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 13:30 - 14:00</div>
-                <h3 class="card-title">UDO SAND 花生冰淇淋</h3>
+                <h3 class="card-title">UDO SAND花生冰淇淋</h3>
                 <div class="kr-name">우도샌드</div>
-                <a href="https://map.naver.com/p/search/우도샌드" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至冰淇淋店</a>
+                <a href="https://map.naver.com/p/search/우도샌드" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
                 <div class="card-type-tag type-spot">自由時間</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 14:00 - 15:00</div>
-                <h3 class="card-title">牛島隨便逛逛</h3>
+                <h3 class="card-title">隨便逛逛</h3>
             </div>
             
             <div class="timeline-card">
@@ -379,7 +389,7 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 16:00 - 16:30</div>
                 <h3 class="card-title">城山日出峰</h3>
                 <div class="kr-name">성산 일출봉</div>
-                <a href="https://map.naver.com/p/search/성산일출봉" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至城山日出峰</a>
+                <a href="https://map.naver.com/p/search/성산일출봉" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -387,7 +397,7 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 16:30 - 17:30</div>
                 <h3 class="card-title">orrrn cafe</h3>
                 <div class="kr-name">오른</div>
-                <a href="https://map.naver.com/p/search/오른" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至咖啡廳</a>
+                <a href="https://map.naver.com/p/search/오른" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -395,7 +405,7 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 19:00 - 21:00</div>
                 <h3 class="card-title">Boreumsup 韓牛</h3>
                 <div class="kr-name">보름숲</div>
-                <a href="https://map.naver.com/p/search/보름숲" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至餐廳</a>
+                <a href="https://map.naver.com/p/search/보름숲" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
         </div>
 
@@ -409,7 +419,7 @@
             <div class="timeline-card">
                 <div class="card-type-tag type-transport">交通</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 08:00 - 09:00</div>
-                <h3 class="card-title">自駕出發</h3>
+                <h3 class="card-title">出發</h3>
             </div>
             
             <div class="timeline-card">
@@ -417,15 +427,15 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 09:00 - 11:00</div>
                 <h3 class="card-title">9.81 Park</h3>
                 <div class="kr-name">9.81 파크</div>
-                <a href="https://map.naver.com/p/search/9.81파크" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至 9.81 Park</a>
+                <a href="https://map.naver.com/p/search/9.81파크" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
-                <div class="card-type-tag type-food">必吃</div>
+                <div class="card-type-tag type-food">美食</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 11:30 - 13:00</div>
-                <h3 class="card-title">熟成到 涯月店</h3>
+                <h3 class="card-title">熟成到</h3>
                 <div class="kr-name">숙성도 애월점</div>
-                <a href="https://map.naver.com/p/search/숙성도 애월점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至熟成到</a>
+                <a href="https://map.naver.com/p/search/숙성도 애월점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -433,23 +443,23 @@
                 <div class="time-badge"><i class="far fa-clock"></i> 13:00 - 14:30</div>
                 <h3 class="card-title">Haejigae Cafe</h3>
                 <div class="kr-name">해지개 카페</div>
-                <a href="https://map.naver.com/p/search/해지개" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至咖啡廳</a>
+                <a href="https://map.naver.com/p/search/해지개 카페" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
                 <div class="card-type-tag type-spot">文化</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 15:00 - 16:00</div>
-                <h3 class="card-title">Osulloc 茶博物館</h3>
+                <h3 class="card-title">Osulloc茶博物館</h3>
                 <div class="kr-name">오설록 티 뮤지엄</div>
-                <a href="https://map.naver.com/p/search/오설록티뮤지엄" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至茶博物館</a>
+                <a href="https://map.naver.com/p/search/오설록 티 뮤지엄" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
-                <div class="card-type-tag type-food">網美</div>
+                <div class="card-type-tag type-food">晚餐</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 晚餐時間</div>
                 <h3 class="card-title">The Cliff</h3>
                 <div class="kr-name">더클리프</div>
-                <a href="https://map.naver.com/p/search/더클리프" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至 The Cliff</a>
+                <a href="https://map.naver.com/p/search/더클리프" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
         </div>
 
@@ -461,24 +471,46 @@
             </div>
             
             <div class="timeline-card">
-                <div class="card-type-tag type-food">必吃</div>
-                <div class="time-badge"><i class="far fa-clock"></i> 11:00 - 12:30</div>
-                <h3 class="card-title">三姓穴海鮮湯 西歸浦店</h3>
+                <div class="card-type-tag type-food">早午餐</div>
+                <div class="time-badge"><i class="far fa-clock"></i> 10:30 - 12:00</div>
+                <h3 class="card-title">三姓穴海鮮湯or其他早午餐</h3>
                 <div class="kr-name">삼성혈해물탕 서귀포점</div>
-                <a href="https://map.naver.com/p/search/삼성혈해물탕 서귀포점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至餐廳</a>
+                <a href="https://map.naver.com/p/search/삼성혈해물탕 서귀포점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
-                <div class="card-type-tag type-food">網美</div>
-                <div class="time-badge"><i class="far fa-clock"></i> 12:30 - 14:00</div>
+                <div class="card-type-tag type-food">咖啡廳</div>
+                <div class="time-badge"><i class="far fa-clock"></i> 12:00 - 13:30</div>
                 <h3 class="card-title">橘花閣樓</h3>
                 <div class="kr-name">귤꽃다락</div>
-                <a href="https://map.naver.com/p/search/귤꽃다락" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至咖啡廳</a>
+                <a href="https://map.naver.com/p/search/귤꽃다락" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
-                <div class="card-type-tag type-transport">重要</div>
-                <div class="time-badge"><i class="far fa-clock"></i> 下午</div>
+                <div class="card-type-tag type-spot">逛街</div>
+                <div class="time-badge"><i class="far fa-clock"></i> 14:30 - 17:30</div>
+                <h3 class="card-title">蓮洞商圈逛街</h3>
+                <div class="kr-name">올리브영 제주연동점</div>
+                <a href="https://map.naver.com/p/search/올리브영 제주연동점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
+            </div>
+
+            <div class="timeline-card">
+                <div class="card-type-tag type-food">晚餐</div>
+                <div class="time-badge"><i class="far fa-clock"></i> 18:00 - 19:30</div>
+                <h3 class="card-title">晚餐</h3>
+            </div>
+
+            <div class="timeline-card">
+                <div class="card-type-tag type-spot">伴手禮</div>
+                <div class="time-badge"><i class="far fa-clock"></i> 19:30 - 20:30</div>
+                <h3 class="card-title">樂天超市買伴手禮</h3>
+                <div class="kr-name">롯데마트 제주점</div>
+                <a href="https://map.naver.com/p/search/롯데마트 제주점" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
+            </div>
+            
+            <div class="timeline-card">
+                <div class="card-type-tag type-transport">交通</div>
+                <div class="time-badge"><i class="far fa-clock"></i> 回飯店前</div>
                 <h3 class="card-title">回飯店前加油</h3>
                 <div class="kr-name">주유소</div>
                 <a href="https://map.naver.com/p/search/주유소" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 搜尋附近加油站</a>
@@ -489,9 +521,9 @@
             <div class="timeline-card">
                 <div class="card-type-tag type-transport">還車</div>
                 <div class="time-badge"><i class="far fa-clock"></i> 06:50 - 07:40</div>
-                <h3 class="card-title">退房與還車</h3>
+                <h3 class="card-title">退房還車</h3>
                 <div class="kr-name">롯데렌터카 제주 오토하우스</div>
-                <a href="https://map.naver.com/p/search/롯데렌터카 제주 오토하우스" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> 導航至還車處</a>
+                <a href="https://map.naver.com/p/search/롯데렌터카 제주 오토하우스" class="nav-btn" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
             </div>
             
             <div class="timeline-card">
@@ -506,7 +538,7 @@
         <h2 style="font-size: 18px; color: var(--accent); margin-bottom: 20px;">韓國必備導航地圖</h2>
         <a href="https://map.naver.com/" target="_blank" class="map-card">
             <div class="map-icon naver">N</div>
-            <div class="map-card-text"><h4>Naver Map</h4><p>韓國自駕必備，支援中文搜尋</p></div>
+            <div class="map-card-text"><h4>Naver Map</h4><p>韓國自駕首選，支援中文搜尋</p></div>
         </a>
         <a href="https://map.kakao.com/" target="_blank" class="map-card">
             <div class="map-icon kakao"><i class="fas fa-comment"></i></div>
@@ -562,12 +594,13 @@
                 <h4>📄 重要文件與憑證</h4>
                 <label class="check-item"><input type="checkbox" id="chk-passport"><span>護照 (效期需 6 個月以上)</span></label>
                 <label class="check-item"><input type="checkbox" id="chk-drive"><span>國際駕照、台灣駕照正本、租車憑證</span></label>
-                <label class="check-item"><input type="checkbox" id="chk-keta"><span>電子入境卡</span></label>
+                <label class="check-item"><input type="checkbox" id="chk-keta"><span>電子入境卡QR碼</span></label>
                 <label class="check-item"><input type="checkbox" id="chk-money"><span>韓元現金 / 信用卡</span></label>
             </div>
 
             <div class="checklist-category">
                 <h4>🔌 電子產品</h4>
+                <label class="check-item"><input type="checkbox" id="chk-sim"><span>eSIM 憑證</span></label>
                 <label class="check-item"><input type="checkbox" id="chk-plug"><span>萬國轉接頭 (韓國為雙圓孔 220V)</span></label>
                 <label class="check-item"><input type="checkbox" id="chk-power"><span>行動電源 / 充電線</span></label>
             </div>
@@ -737,8 +770,8 @@
             // 行李勾選記憶
             const checks = document.querySelectorAll('.check-item input');
             checks.forEach(c => {
-                c.checked = localStorage.getItem('jeju_check_final2_' + c.id) === 'true';
-                c.onchange = () => localStorage.setItem('jeju_check_final2_' + c.id, c.checked);
+                c.checked = localStorage.getItem('jeju_check_v3_' + c.id) === 'true';
+                c.onchange = () => localStorage.setItem('jeju_check_v3_' + c.id, c.checked);
             });
         });
     </script>
